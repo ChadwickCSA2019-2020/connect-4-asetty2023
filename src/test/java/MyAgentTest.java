@@ -168,6 +168,8 @@ public void testTheyCanWinHorizontally() {
 
   // TODO: Write testTheyCanWinDiagonally
 
+
+
   // Tests you can win against a Beginner agent as Red
   @Test
   public void testRedWinningBeginnerAgent() {
@@ -266,8 +268,72 @@ public void testTheyCanWinHorizontally() {
 
   // BONUS TODO: Write testCases to play against IntermediateAgent
 
+//BONUS testCases vs. IntermediateAgent
+@Test
+public void testYellowWinningIntermediateAgent() {
+  Agent redAgent = new MyAgent(game, true);
+  Agent yellowAgent = new IntermediateAgent(game, false);
+  int numberOfWins = 0;
+  for (int i = 0; i < 50; i++) {
+    game.clearBoard();
+    while(!game.boardFull() || game.gameWon() == 'N') {
+      redAgent.move();
+      if (game.gameWon() != 'R') {
+        yellowAgent.move();
+      }
+    }
+
+    if (game.gameWon() == 'Y') {
+      numberOfWins++;
+    }
+  }
+  System.out.println("You won: " + numberOfWins + " games as Yellow against Intermediate");
+  assertTrue(numberOfWins >= 45);
+}
   // SUPER BONUS TODO: Write testCases to playAgainst AdvancedAgent
+//BONUS testCases vs. AdvancedAgent
+  @Test
+  public void testYellowWinningAdvencedAgent() {
+    Agent redAgent = new MyAgent(game, true);
+    Agent yellowAgent = new AdvancedAgent(game, false);
+    int numberOfWins = 0;
+    for (int i = 0; i < 50; i++) {
+      game.clearBoard();
+      while(!game.boardFull() || game.gameWon() == 'N') {
+        redAgent.move();
+        if (game.gameWon() != 'R') {
+          yellowAgent.move();
+        }
+      }
 
+      if (game.gameWon() == 'Y') {
+        numberOfWins++;
+      }
+    }
+    System.out.println("You won: " + numberOfWins + " games as Yellow against Advanced");
+    assertTrue(numberOfWins >= 45);
+  }
   // SUPER BONUS TODO: Write testCases to playAgainst BrilliantAgent
+  //BONUS testCases vs. BrilliantAgent
+  @Test
+  public void testYellowWinningBrilliantAgent() {
+    Agent redAgent = new MyAgent(game, true);
+    Agent yellowAgent = new BrilliantAgent(game, false);
+    int numberOfWins = 0;
+    for (int i = 0; i < 50; i++) {
+      game.clearBoard();
+      while(!game.boardFull() || game.gameWon() == 'N') {
+        redAgent.move();
+        if (game.gameWon() != 'R') {
+          yellowAgent.move();
+        }
+      }
 
+      if (game.gameWon() == 'Y') {
+        numberOfWins++;
+      }
+    }
+    System.out.println("You won: " + numberOfWins + " games as Yellow against Brilliant");
+    assertTrue(numberOfWins >= 45);
+  }
 }
