@@ -98,15 +98,17 @@ public void TestICanWinDiagonallyRight() {
   MyAgent redAgent = new MyAgent(game, true);
   MyAgent yellowAgent = new MyAgent(game, false);
   game.clearBoard();
+
+      redAgent.moveOnColumn(5);
       yellowAgent.moveOnColumn(4);
+      redAgent.moveOnColumn(6);
+      yellowAgent.moveOnColumn(2);
       redAgent.moveOnColumn(3);
-      yellowAgent.moveOnColumn(3);
+      yellowAgent.moveOnColumn(3);
       redAgent.moveOnColumn(2);
-      yellowAgent.moveOnColumn(2);
-      redAgent.moveOnColumn(1);
-      yellowAgent.moveOnColumn(2);
-      redAgent.moveOnColumn(1);
-      yellowAgent.moveOnColumn(3);
+      yellowAgent.moveOnColumn(2);
+      redAgent.moveOnColumn(1);
+      yellowAgent.moveOnColumn(1);
       redAgent.moveOnColumn(1);
 
   assertEquals(yellowAgent.ICanWin(), 1);
@@ -167,6 +169,53 @@ public void testTheyCanWinHorizontally() {
 
 
   // TODO: Write testTheyCanWinDiagonally
+
+  //testTheyCanWinDiagonally#1
+
+  @Test
+  public void testTheyCanWinDiagonally() {
+      MyAgent redAgent = new MyAgent(game, true);
+      MyAgent yellowAgent = new MyAgent(game, false);
+      game.clearBoard();
+      for (int i = 0; i < 4; i++) {
+        redAgent.moveOnColumn(0);
+        yellowAgent.moveOnColumn(1);
+        redAgent.moveOnColumn(2);
+        yellowAgent.moveOnColumn(2);
+        redAgent.moveOnColumn(3);
+        yellowAgent.moveOnColumn(1);
+        redAgent.moveOnColumn(4)
+        yellowAgent.moveOnColumn(3);
+        redAgent.moveOnColumn(4);
+        yellowAgent.moveOnColumn(3);
+        redAgent.moveOnColumn(4);
+      }
+      assertEquals(redAgent.theyCanWin(), 4);
+    }
+
+//testTheyCanWinDiagonally#2
+
+@Test
+public void testTheyCanWinDiagonally() {
+    MyAgent redAgent = new MyAgent(game, true);
+    MyAgent yellowAgent = new MyAgent(game, false);
+    game.clearBoard();
+    for (int i = 0; i < 4; i++) {
+      redAgent.moveOnColumn(5);
+      yellowAgent.moveOnColumn(4);
+      redAgent.moveOnColumn(6);
+      yellowAgent.moveOnColumn(3);
+      redAgent.moveOnColumn(2);
+      yellowAgent.moveOnColumn(3);
+      redAgent.moveOnColumn(2)
+      yellowAgent.moveOnColumn(3);
+      redAgent.moveOnColumn(4);
+      yellowAgent.moveOnColumn(3);
+      redAgent.moveOnColumn(4);
+      yellowAgent.moveOnColumn(2);
+    }
+    assertEquals(redAgent.theyCanWin(), 4);
+  }
 
 
 
