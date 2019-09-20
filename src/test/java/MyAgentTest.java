@@ -227,7 +227,7 @@ public void testTheyCanWinDiagonally() {
     int numberOfWins = 0;
     for (int i = 0; i < 50; i++) {
       game.clearBoard();
-      while(!game.boardFull() || game.gameWon() == 'N') {
+      while(!game.boardFull() && game.gameWon() == 'N') {
         redAgent.move();
         if (game.gameWon() != 'R') {
           yellowAgent.move();
@@ -251,7 +251,7 @@ public void testTheyCanWinDiagonally() {
     int numberOfWins = 0;
     for (int i = 0; i < 50; i++) {
       game.clearBoard();
-      while(!game.boardFull() || game.gameWon() == 'N') {
+    while(!game.boardFull() && game.gameWon() == 'N') {
         redAgent.move();
         if (game.gameWon() != 'R') {
           yellowAgent.move();
@@ -275,7 +275,7 @@ public void testTheyCanWinDiagonally() {
     int numberOfWins = 0;
     for (int i = 0; i < 50; i++) {
       game.clearBoard();
-      while(!game.boardFull() || game.gameWon() == 'N') {
+    while(!game.boardFull() && game.gameWon() == 'N') {
         redAgent.move();
         if (game.gameWon() != 'R') {
           yellowAgent.move();
@@ -299,7 +299,7 @@ public void testTheyCanWinDiagonally() {
     int numberOfWins = 0;
     for (int i = 0; i < 50; i++) {
       game.clearBoard();
-      while(!game.boardFull() || game.gameWon() == 'N') {
+      while(!game.boardFull() && game.gameWon() == 'N') {
         redAgent.move();
         if (game.gameWon() != 'R') {
           yellowAgent.move();
@@ -325,7 +325,7 @@ public void testYellowWinningIntermediateAgent() {
   int numberOfWins = 0;
   for (int i = 0; i < 50; i++) {
     game.clearBoard();
-    while(!game.boardFull() || game.gameWon() == 'N') {
+    while(!game.boardFull() && game.gameWon() == 'N') {
       redAgent.move();
       if (game.gameWon() != 'R') {
         yellowAgent.move();
@@ -348,7 +348,7 @@ public void testYellowWinningIntermediateAgent() {
     int numberOfWins = 0;
     for (int i = 0; i < 50; i++) {
       game.clearBoard();
-      while(!game.boardFull() || game.gameWon() == 'N') {
+       while(!game.boardFull() && game.gameWon() == 'N') {
         redAgent.move();
         if (game.gameWon() != 'R') {
           yellowAgent.move();
@@ -371,7 +371,7 @@ public void testYellowWinningIntermediateAgent() {
     int numberOfWins = 0;
     for (int i = 0; i < 50; i++) {
       game.clearBoard();
-      while(!game.boardFull() || game.gameWon() == 'N') {
+      while(!game.boardFull() && game.gameWon() == 'N') {
         redAgent.move();
         if (game.gameWon() != 'R') {
           yellowAgent.move();
